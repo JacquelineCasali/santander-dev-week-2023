@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
-@Entity(name="tb_account")
+@Entity(name = "tb_account")
 public class Account {
 
     @Id
@@ -13,22 +13,15 @@ public class Account {
 
    // numero da conta é unico
     @Column(unique = true)
-
     private String number;
     private String agency;
 
-    @Column(scale = 13,precision = 2)
+    @Column(precision = 13,scale = 2)
     private BigDecimal balance;
-    @Column(name = "addition_limit", scale = 13,precision = 2)
+    @Column(name = "addition_limit", precision = 13,scale = 2)
     private BigDecimal limit;
 
-    public Account(Long id, String number, String agency, BigDecimal balance, BigDecimal limit) {
-        this.id = id;
-        this.number = number;
-        this.agency = agency;
-        this.balance = balance;
-        this.limit = limit;
-    }
+
 
     public Long getId() {
         return id;
