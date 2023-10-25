@@ -1,27 +1,29 @@
 package com.java.domain.model;
-
-import jakarta.persistence.*;
-
 import java.math.BigDecimal;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity(name = "tb_account")
 public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private Long id;
 
-   // numero da conta é unico
     @Column(unique = true)
     private String number;
+
     private String agency;
 
-    @Column(precision = 13,scale = 2)
+    @Column(precision = 13, scale = 2)
     private BigDecimal balance;
-    @Column(name = "addition_limit", precision = 13,scale = 2)
+
+    @Column(name = "additional_limit", precision = 13, scale = 2)
     private BigDecimal limit;
-
-
 
     public Long getId() {
         return id;
@@ -62,4 +64,5 @@ public class Account {
     public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
+
 }

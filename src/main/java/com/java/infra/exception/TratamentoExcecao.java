@@ -1,4 +1,4 @@
-package com.java.controller.exception;
+package com.java.infra.exception;
 
 
 
@@ -28,8 +28,10 @@ public class TratamentoExcecao {
 
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<String> handleUnexpectedException(Throwable unexpectedException) {
-        var message = "Unexpected server error, see the logs.";
+        var message = "Erro inesperado do servidor.";
         logger.error(message, unexpectedException);
         return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
+
 }

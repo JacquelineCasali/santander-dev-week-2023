@@ -3,7 +3,6 @@ package com.java.domain.model;
 import jakarta.persistence.*;
 
 
-import java.math.BigDecimal;
 import java.util.List;
 @Entity(name="tb_user")
 public class User {
